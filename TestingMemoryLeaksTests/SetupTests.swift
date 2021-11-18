@@ -23,7 +23,7 @@ class SetupTests: XCTestCase {
         navigation.pushViewController(vc, animated: false)
         navigation.popViewController(animated: false)
 
-        testTeardown(on: vc)
+        testTeardown(of: vc)
     }
 
     func testSecond() {
@@ -34,13 +34,13 @@ class SetupTests: XCTestCase {
         navigation.pushViewController(vc, animated: false)
         navigation.popViewController(animated: false)
 
-        testTeardown(on: vm)
-        testTeardown(on: vc)
+        testTeardown(of: vm)
+        testTeardown(of: vc)
     }
 }
 
 extension XCTestCase {
-    func testTeardown<T>(on instance: T, file: StaticString = #filePath, line: UInt = #line)
+    func testTeardown<T>(of instance: T, file: StaticString = #filePath, line: UInt = #line)
     where T: AnyObject {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "was not deallocated", file: file, line: line)
