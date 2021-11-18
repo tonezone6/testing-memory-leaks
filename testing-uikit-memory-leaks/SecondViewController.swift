@@ -31,22 +31,24 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.$seconds
-            // .sink(receiveValue: log(seconds:)) // memory leak
+            // .sink(receiveValue: log(seconds:)) // ~ memory leak ~
             .sink { [weak self] in self?.log(seconds: $0) }
             .store(in: &cancellables)
         
         viewModel.$finished
             .compactMap { $0 }
-            // .sink(receiveValue: back) // memory leak
-            .sink { [weak self] in self?.back() }
+            // .sink(receiveValue: back) // ~ memory leak ~
+            .sink { [weak self] in self?.goBack() }
             .store(in: &cancellables)
     }
-    
-    private func log(seconds: Int) {
+}
+
+private extension SecondViewController {
+    func log(seconds: Int) {
         print("output", seconds)
     }
     
-    private func back() {
+    func goBack() {
         navigationController?.popViewController(animated: true)
     }
 }

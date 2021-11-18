@@ -8,23 +8,24 @@ import SwiftUI
 import UIKit
 
 class FirstViewController: UIViewController {
-    
     override func loadView() {
         var sui = FirstView()
-        // sui.onAction = { self.pushSecond() } // memory leak
+        // sui.onAction = { self.pushSecond() } // ~ memory leak ~
         sui.onAction = { [weak self] in self?.pushSecond() }
         view = container(with: sui)
         title = "First"
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+private extension FirstViewController {
     func pushSecond() {
         let vm = SecondViewModel()
         let vc = SecondViewController(viewModel: vm)
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
 

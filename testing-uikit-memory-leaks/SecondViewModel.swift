@@ -20,9 +20,8 @@ class SecondViewModel: ObservableObject {
         timer.autoconnect()
             .scan(count) { acc, _ in acc - 1 }
             .prefix(count)
-            .handleEvents(receiveCompletion: { [weak self] _ in
-                self?.finished = ()
-            })
+            // .handleEvents(receiveCompletion: { _ in self.finished = () }) // ~ memory leak ~
+            .handleEvents(receiveCompletion: { [weak self] _ in self?.finished = () })
             .assign(to: &$seconds)
     }
 }
