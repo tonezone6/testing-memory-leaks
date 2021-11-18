@@ -86,17 +86,8 @@
 		FA6DCE6427467DE4001389F2 /* testing-uikit-memory-leaks */ = {
 			isa = PBXGroup;
 			children = (
-				FA6DCE6527467DE4001389F2 /* AppDelegate.swift */,
-				FA6DCE6727467DE4001389F2 /* SceneDelegate.swift */,
-				FA6DCE7B27467FCA001389F2 /* FirstView.swift */,
-				FA6DCE6927467DE4001389F2 /* FirstViewController.swift */,
-				FA6DCE7D27468128001389F2 /* SecondView.swift */,
-				FA6DCE7F27468134001389F2 /* SecondViewController.swift */,
-				FA6DCE7927467E10001389F2 /* SecondViewModel.swift */,
-				FA6DCE6B27467DE4001389F2 /* Main.storyboard */,
-				FA6DCE7027467DE5001389F2 /* LaunchScreen.storyboard */,
-				FA6DCE6E27467DE5001389F2 /* Assets.xcassets */,
-				FA6DCE7327467DE5001389F2 /* Info.plist */,
+				FA6DCE8F27469E1E001389F2 /* Screens */,
+				FA6DCE8E27469E09001389F2 /* Supporting files */,
 			);
 			path = "testing-uikit-memory-leaks";
 			sourceTree = "<group>";
@@ -107,6 +98,47 @@
 				FA6DCE87274688DC001389F2 /* SetupTests.swift */,
 			);
 			path = TestingMemoryLeaksTests;
+			sourceTree = "<group>";
+		};
+		FA6DCE8E27469E09001389F2 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DCE6527467DE4001389F2 /* AppDelegate.swift */,
+				FA6DCE6727467DE4001389F2 /* SceneDelegate.swift */,
+				FA6DCE6B27467DE4001389F2 /* Main.storyboard */,
+				FA6DCE7027467DE5001389F2 /* LaunchScreen.storyboard */,
+				FA6DCE6E27467DE5001389F2 /* Assets.xcassets */,
+				FA6DCE7327467DE5001389F2 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		FA6DCE8F27469E1E001389F2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DCE9027469EDD001389F2 /* First */,
+				FA6DCE9127469EE3001389F2 /* Second */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FA6DCE9027469EDD001389F2 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DCE7B27467FCA001389F2 /* FirstView.swift */,
+				FA6DCE6927467DE4001389F2 /* FirstViewController.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		FA6DCE9127469EE3001389F2 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DCE7D27468128001389F2 /* SecondView.swift */,
+				FA6DCE7F27468134001389F2 /* SecondViewController.swift */,
+				FA6DCE7927467E10001389F2 /* SecondViewModel.swift */,
+			);
+			path = Second;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +415,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 733W6R73TS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "testing-uikit-memory-leaks/Info.plist";
+				INFOPLIST_FILE = "testing-uikit-memory-leaks/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -411,7 +443,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 733W6R73TS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "testing-uikit-memory-leaks/Info.plist";
+				INFOPLIST_FILE = "testing-uikit-memory-leaks/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
