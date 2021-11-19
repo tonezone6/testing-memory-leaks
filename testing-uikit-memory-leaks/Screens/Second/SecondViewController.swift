@@ -2,7 +2,6 @@
 //  SecondViewController.swift
 //  testing-uikit-memory-leaks
 //
-//  Created by Alex Stratu on 18/11/2021.
 //
 
 import Combine
