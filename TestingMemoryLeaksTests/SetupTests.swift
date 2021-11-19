@@ -10,7 +10,7 @@ class SetupTests: XCTestCase {
         navigation.setViewControllers([root], animated: false)
     }
     
-    func testFirst() {
+    func testFirstScreen() {
         let vc = FirstViewController()
         vc.loadView()
         
@@ -20,7 +20,7 @@ class SetupTests: XCTestCase {
         testTeardown(of: vc)
     }
 
-    func testSecond() {
+    func testSecondScreen() {
         let vm = SecondViewModel()
         let vc = SecondViewController(viewModel: vm)
         vc.viewDidLoad()
