@@ -1,9 +1,3 @@
-//
-//  testing_uikit_memory_leaksTests.swift
-//  testing-uikit-memory-leaksTests
-//
-//  Created by Alex Stratu on 18/11/2021.
-//
 
 import XCTest
 @testable import TestingMemoryLeaks
@@ -18,7 +12,7 @@ class SetupTests: XCTestCase {
     
     func testFirst() {
         let vc = FirstViewController()
-        vc.loadView() // setup done in `loadView`
+        vc.loadView()
         
         navigation.pushViewController(vc, animated: false)
         navigation.popViewController(animated: false)
@@ -29,7 +23,7 @@ class SetupTests: XCTestCase {
     func testSecond() {
         let vm = SecondViewModel()
         let vc = SecondViewController(viewModel: vm)
-        vc.viewDidLoad() // setup done in `viewDidLoad`
+        vc.viewDidLoad()
         
         navigation.pushViewController(vc, animated: false)
         navigation.popViewController(animated: false)
@@ -37,14 +31,16 @@ class SetupTests: XCTestCase {
         testTeardown(of: vm)
         testTeardown(of: vc)
     }
-}
+    
+    // MARK: Test view model in isolation.
+    
+    func testViewModel() {
+        let vm = SecondViewModel()
+        var wrapper: Wrapper? = .init(viewModel: vm)
+        _ = wrapper
+        
+        wrapper = nil
 
-extension XCTestCase {
-    func testTeardown<T>(of instance: T, file: StaticString = #filePath, line: UInt = #line)
-    where T: AnyObject {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "was not deallocated", file: file, line: line)
-        }
+        testTeardown(of: vm)
     }
 }
-
